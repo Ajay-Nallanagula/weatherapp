@@ -12,7 +12,7 @@ const forecastWeatherCb = (error, cityName, weatherData, cRes) => {
     return msg
   }
   const { temperature, weather_descriptions, precip } = weatherData
-  cRes.send({ cityName, temperature, weather_descriptions, precip })
+  cRes.send({ cityName, temperature, weather_descriptions, precip, author: 'Ajay Nallanagula' })
 }
 
 
@@ -34,11 +34,6 @@ app.get('/weather', (req, res) => {
     const [longitude, latitude] = cordinates
     // infoMsg(`City:${city} Latittude:${latitude} and Longitude: ${longitude}`)
     return forecastWeather(latitude, longitude, res, forecastWeatherCb)
-    //console.log(foreRes)
-    //console.log({ result })
-    // return res.status(200).send({
-    //   longitude, latitude
-    // })
   })
 
 
