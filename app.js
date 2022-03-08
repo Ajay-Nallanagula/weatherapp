@@ -47,7 +47,7 @@ app.get('/weather', (req, res) => {
 
 
 app.listen(port, () => {
-  const msg = infoMsg(`Server Started at port:${port} url:http://localhost:3009`)
+  const msg = infoMsg(`Server Started at port:${port} url:http://localhost:${port}`)
   console.log(msg)
 })
 
